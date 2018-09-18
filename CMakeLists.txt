@@ -16,6 +16,12 @@ add_executable(${PROJECT_NAME} "main.cpp")
 
 #message(STATUS ${OpenCV_LIBS})
 
+#target_link_libraries(${PROJECT_NAME}
+#    opencv_sfm
+#)
+
 target_link_libraries(${PROJECT_NAME}
-    opencv_sfm
+
+openblas
+
 )
