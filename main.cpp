@@ -1,19 +1,14 @@
 #include <iostream>
 
-using namespace std;
-
+// Calculate some nonsense so we have something to measure
 void func1() {
     size_t sum = 0;
-//#pragma omp parallel for
     for (size_t ii = 0; ii < 1000000; ++ii) {
         size_t t1 = ii;
         t1 += 1;
         t1 *= 2;
         t1 /= 3;
-//#pragma omp critical
-        {
-            sum += t1;
-        }
+        sum += t1;
     }
     std::cout << "The sum is: " << sum << std::endl;
 }
@@ -28,14 +23,11 @@ void func2() {
 
 int main()
 {
-    cout << "Hello World!" << endl;
+    std::cout << "Hello World!" << std::endl;
 
-//#pragma omp parallel sections
-    {
-//#pragma omp section
     func1();
-//#pragma omp section
     func2();
-    }
+
+    std::cout << "Finished calculating nonsense" << std::endl;
     return 0;
 }
