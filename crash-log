@@ -1,653 +1,651 @@
---10236:1:debuglog DebugLog system started by Stage 1, level 3 logging requested
---10236:1:launcher no tool requested, defaulting to 'memcheck'
---10236:2:launcher   selecting platform for './callgrind-test'
---10236:2:launcher   selecting platform for './callgrind-test'
---10236:2:launcher   opened './callgrind-test'
---10236:2:launcher   read 4096 bytes from './callgrind-test'
---10236:2:launcher   selected platform 'amd64-linux'
---10236:1:launcher selected platform 'amd64-linux'
---10236:1:launcher launching /usr/local/lib/valgrind/memcheck-amd64-linux
---10236:1:debuglog DebugLog system started by Stage 2 (main), level 3 logging requested
---10236:1:    main Welcome to Valgrind version 3.14.0.GIT debug logging
---10236:1:    main Checking current stack is plausible
---10236:1:    main Checking initial stack was noted
---10236:1:    main Starting the address space manager
---10236:2: aspacem           sp_at_startup = 0x7ffd48f88ef0 (supplied)
---10236:2: aspacem                 minAddr = 0x0004000000 (computed)
---10236:2: aspacem                 maxAddr = 0x1fffffffff (computed)
---10236:2: aspacem                  cStart = 0x0004000000 (computed)
---10236:2: aspacem                  vStart = 0x1002000000 (computed)
---10236:2: aspacem   suggested_clstack_end = 0x1fff000fff (computed)
---10236:2: aspacem   <<< SHOW_SEGMENTS: Initial layout (5 segments)
---10236:2: aspacem   0 segment names in 0 slots
---10236:2: aspacem   freelist is empty
---10236:2: aspacem     0: RSVN 0000000000-0003ffffff     64m ----- SmFixed
---10236:2: aspacem     1:      0004000000-1001ffffff  65504m
---10236:2: aspacem     2: RSVN 1002000000-1002000fff    4096 ----- SmFixed
---10236:2: aspacem     3:      1002001000-1fffffffff  65503m
---10236:2: aspacem     4: RSVN 2000000000-ffffffffffffffff  16383e ----- SmFixed
---10236:2: aspacem   >>>
---10236:2: aspacem   Reading /proc/self/maps
---10236:2: aspacem   <<< SHOW_SEGMENTS: With contents of /proc/self/maps (17 segments)
---10236:2: aspacem   1 segment names in 1 slots
---10236:2: aspacem   freelist is empty
---10236:2: aspacem   (0,4,7) /usr/local/lib/valgrind/memcheck-amd64-linux
---10236:2: aspacem     0: RSVN 0000000000-0003ffffff     64m ----- SmFixed
---10236:2: aspacem     1:      0004000000-0057ffffff   1344m
---10236:2: aspacem     2: FILE 0058000000-0058000fff    4096 r---- d=0xfe01 i=4988740 o=0       (0,4)
---10236:2: aspacem     3: FILE 0058001000-00581e6fff 1990656 r-x-- d=0xfe01 i=4988740 o=4096    (0,4)
---10236:2: aspacem     4: FILE 00581e7000-005827efff  622592 r---- d=0xfe01 i=4988740 o=1994752 (0,4)
---10236:2: aspacem     5:      005827f000-005827ffff    4096
---10236:2: aspacem     6: FILE 0058280000-0058285fff   24576 rw--- d=0xfe01 i=4988740 o=2617344 (0,4)
---10236:2: aspacem     7: ANON 0058286000-0059c88fff     26m rw---
---10236:2: aspacem     8:      0059c89000-1001ffffff  64131m
---10236:2: aspacem     9: RSVN 1002000000-1002000fff    4096 ----- SmFixed
---10236:2: aspacem    10:      1002001000-1fffffffff  65503m
---10236:2: aspacem    11: RSVN 2000000000-7ffd48f68fff 130933g ----- SmFixed
---10236:2: aspacem    12: ANON 7ffd48f69000-7ffd48f89fff  135168 rw---
---10236:2: aspacem    13: RSVN 7ffd48f8a000-7ffd48fc2fff  233472 ----- SmFixed
---10236:2: aspacem    14: ANON 7ffd48fc3000-7ffd48fc5fff   12288 r----
---10236:2: aspacem    15: ANON 7ffd48fc6000-7ffd48fc7fff    8192 r-x--
---10236:2: aspacem    16: RSVN 7ffd48fc8000-ffffffffffffffff  16383e ----- SmFixed
---10236:2: aspacem   >>>
---10236:1:    main Address space manager is running
---10236:1:    main Starting the dynamic memory manager
---10236:1:mallocfr newSuperblock at 0x1002001000 (pszB 4194272)  owner VALGRIND/core
---10236:1:mallocfr deferred_reclaimSuperblock at 0x1002001000 (pszB 4194272)  (prev 0x0) owner VALGRIND/core
---10236:1:    main Dynamic memory manager is running
---10236:1:    main Initialise m_debuginfo
---10236:1:    main VG_(libdir) = /usr/local/lib/valgrind
---10236:1:    main Getting launcher's name ...
---10236:1:    main ... /usr/local/bin/valgrind
---10236:1:    main Get hardware capabilities ...
---10236:1:   cache warning: Unknown Intel cache config value (0x63), ignoring
---10236:1:   cache Autodetected cache info is sensible
---10236:1:   cache Cache info:
---10236:1:   cache   #levels = 3
---10236:1:   cache   #caches = 4
---10236:1:   cache      cache #0:
---10236:1:   cache         kind = data
---10236:1:   cache         level = 1
---10236:1:   cache         size = 32768 bytes
---10236:1:   cache         linesize = 64 bytes
---10236:1:   cache         assoc = 8
---10236:1:   cache      cache #1:
---10236:1:   cache         kind = insn
---10236:1:   cache         level = 1
---10236:1:   cache         size = 32768 bytes
---10236:1:   cache         linesize = 64 bytes
---10236:1:   cache         assoc = 8
---10236:1:   cache      cache #2:
---10236:1:   cache         kind = unified
---10236:1:   cache         level = 2
---10236:1:   cache         size = 262144 bytes
---10236:1:   cache         linesize = 64 bytes
---10236:1:   cache         assoc = 4
---10236:1:   cache      cache #3:
---10236:1:   cache         kind = unified
---10236:1:   cache         level = 3
---10236:1:   cache         size = 6291456 bytes
---10236:1:   cache         linesize = 64 bytes
---10236:1:   cache         assoc = 12
---10236:1:    main ... arch = AMD64, hwcaps = amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
---10236:1:    main Getting the working directory at startup
---10236:1:    main ... /home/alexander/callgrind-test
---10236:1:    main Split up command line
---10236:1:    main (early_) Process Valgrind's command line options
---10236:1:    main Create initial image
---10236:1: initimg Loading client
---10236:1: initimg Setup client env
---10236:2: initimg   preload_string:
---10236:2: initimg     "/usr/local/lib/valgrind/vgpreload_core-amd64-linux.so:/usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so"
---10236:1: initimg Setup client stack: size will be 8388608
---10236:2: initimg   stomping auxv entry 26
---10236:2: initimg   Client info: initial_IP=0x4001210 initial_TOC=0x0 brk_base=0x10D000
---10236:2: initimg   Client info: initial_SP=0x1FFF000250 max_stack_size=8388608
---10236:1: initimg Setup client data (brk) segment
---10236:1:    main Setup file descriptors
---10236:1:    main Create fake /proc/<pid>/cmdline
---10236:1:    main Create fake /proc/<pid>/auxv
---10236:1:    main Initialise the tool part 1 (pre_clo_init)
---10236:1:mallocfr deferred_reclaimSuperblock NULL (prev 0x1002001000) owner VALGRIND/core
---10236:1:mallocfr newSuperblock at 0x1002401000 (pszB 4194272)  owner VALGRIND/core
---10236:1:    main Print help and quit, if requested
---10236:1:    main (main_) Process Valgrind's command line options, setup logging
---10236:1:    main Print the preamble...
-==10236== Memcheck, a memory error detector
-==10236== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==10236== Using Valgrind-3.14.0.GIT-97365bada6-20180915 and LibVEX; rerun with -h for copyright info
-==10236== Command: ./callgrind-test
-==10236== 
---10236-- Valgrind options:
---10236--    -v
---10236--    -v
---10236--    -v
---10236--    -d
---10236--    -d
---10236--    -d
---10236-- Contents of /proc/version:
---10236--   Linux version 4.17.0-3-amd64 (debian-kernel@lists.debian.org) (gcc version 7.3.0 (Debian 7.3.0-28)) #1 SMP Debian 4.17.17-1 (2018-08-18)
---10236-- 
---10236-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
---10236-- Page sizes: currently 4096, max supported 4096
---10236-- Valgrind library directory: /usr/local/lib/valgrind
---10236:1:    main ...finished the preamble
---10236:1:    main Initialise the tool part 2 (post_clo_init)
---10236:1:    main Initialise TT/TC
---10236-- TT/TC: VG_(init_tt_tc) (startup of code management)
---10236-- TT/TC: cache: ignoring --avg-transtab-entry-size=0, using tool provided default 640
---10236-- TT/TC: cache: 32 sectors of 27,597,024 bytes each = 883,104,768 total TC
---10236-- TT/TC: table: 32 tables[42588] of C 4,769,856 + H 1,362,816 bytes each = 196,245,504 total TT
---10236-- TT/TC: table: 42588 tt entries each = 1,362,816 total tt entries
---10236-- TT/TC: table: 32 htt[65521] of 131,042 bytes each = 4,193,344 total HTT (htt[65521] 65% max occup)
---10236:1:    main Initialise redirects
---10236:1:mallocfr newSuperblock at 0x100287C000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:2:transtab   discard_translations(0xffffffffff600000, 1) req by redir_new_DebugInfo(from_addr)
---10236:2:transtab                       FAST, ec = 256
---10236:2:transtab   discard_translations(0x580c9484, 1) req by redir_new_DebugInfo(to_addr)
---10236:2:transtab                       FAST, ec = 100
-==10236== Adding active redirection:
---10236--     new: 0xffffffffff600000 (???                 ) R-> (0000.0) 0x580c9484 ???
---10236:2:transtab   discard_translations(0xffffffffff600400, 1) req by redir_new_DebugInfo(from_addr)
---10236:2:transtab                       FAST, ec = 256
---10236:2:transtab   discard_translations(0x580c948e, 1) req by redir_new_DebugInfo(to_addr)
---10236:2:transtab                       FAST, ec = 100
-==10236== Adding active redirection:
---10236--     new: 0xffffffffff600400 (???                 ) R-> (0000.0) 0x580c948e ???
---10236:2:transtab   discard_translations(0xffffffffff600800, 1) req by redir_new_DebugInfo(from_addr)
---10236:2:transtab                       FAST, ec = 256
---10236:2:transtab   discard_translations(0x580c9498, 1) req by redir_new_DebugInfo(to_addr)
---10236:2:transtab                       FAST, ec = 100
-==10236== Adding active redirection:
---10236--     new: 0xffffffffff600800 (???                 ) R-> (0000.0) 0x580c9498 ???
---10236:1:    main Load initial debug info
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x108000-0x108fff r--
---10236-- di_notify_mmap-2: /home/alexander/callgrind-test/callgrind-test
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x100287C470
---10236-- di_notify_mmap-6: no dinfo loaded /home/alexander/callgrind-test/callgrind-test (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x109000-0x109fff r-x
---10236-- di_notify_mmap-2: /home/alexander/callgrind-test/callgrind-test
---10236-- di_notify_mmap-3: is_rx_map 1, is_rw_map 0, is_ro_map 0
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x100287C470
---10236-- di_notify_mmap-6: no dinfo loaded /home/alexander/callgrind-test/callgrind-test (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x10a000-0x10afff r--
---10236-- di_notify_mmap-2: /home/alexander/callgrind-test/callgrind-test
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x100287C470
---10236-- di_notify_mmap-6: no dinfo loaded /home/alexander/callgrind-test/callgrind-test (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x10b000-0x10cfff rw-
---10236-- di_notify_mmap-2: /home/alexander/callgrind-test/callgrind-test
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 1, is_ro_map 0
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x100287C470
---10236-- di_notify_mmap-5: achieved accept state for /home/alexander/callgrind-test/callgrind-test
---10236-- Reading syms from /home/alexander/callgrind-test/callgrind-test
---10236--    svma 0x00000010d0, avma 0x00001090d0
---10236:1:mallocfr newSuperblock at 0x100297C000 (pszB   65504)  owner VALGRIND/demangle
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x4000000-0x4000fff r--
---10236-- di_notify_mmap-2: /lib/x86_64-linux-gnu/ld-2.27.so
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C67E0
---10236-- di_notify_mmap-6: no dinfo loaded /lib/x86_64-linux-gnu/ld-2.27.so (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x4001000-0x401efff r-x
---10236-- di_notify_mmap-2: /lib/x86_64-linux-gnu/ld-2.27.so
---10236-- di_notify_mmap-3: is_rx_map 1, is_rw_map 0, is_ro_map 0
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C67E0
---10236-- di_notify_mmap-6: no dinfo loaded /lib/x86_64-linux-gnu/ld-2.27.so (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x401f000-0x4026fff r--
---10236-- di_notify_mmap-2: /lib/x86_64-linux-gnu/ld-2.27.so
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C67E0
---10236-- di_notify_mmap-6: no dinfo loaded /lib/x86_64-linux-gnu/ld-2.27.so (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x4027000-0x4028fff rw-
---10236-- di_notify_mmap-2: /lib/x86_64-linux-gnu/ld-2.27.so
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 1, is_ro_map 0
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C67E0
---10236-- di_notify_mmap-5: achieved accept state for /lib/x86_64-linux-gnu/ld-2.27.so
---10236-- Reading syms from /lib/x86_64-linux-gnu/ld-2.27.so
---10236--    svma 0x0000001090, avma 0x0004001090
---10236--   Considering /usr/lib/debug/.build-id/dc/5cb16f5e644116cac64a4c3f5da4d081b81a4f.debug ..
---10236--   .. build-id is valid
---10236-- summarise_context(loc_start = 0x10): cannot summarise(why=1):   
+--11129:1:debuglog DebugLog system started by Stage 1, level 3 logging requested
+--11129:1:launcher no tool requested, defaulting to 'memcheck'
+--11129:2:launcher   selecting platform for './callgrind-test'
+--11129:2:launcher   selecting platform for './callgrind-test'
+--11129:2:launcher   opened './callgrind-test'
+--11129:2:launcher   read 4096 bytes from './callgrind-test'
+--11129:2:launcher   selected platform 'amd64-linux'
+--11129:1:launcher selected platform 'amd64-linux'
+--11129:1:launcher launching /usr/local/lib/valgrind/memcheck-amd64-linux
+--11129:1:debuglog DebugLog system started by Stage 2 (main), level 3 logging requested
+--11129:1:    main Welcome to Valgrind version 3.14.0.GIT debug logging
+--11129:1:    main Checking current stack is plausible
+--11129:1:    main Checking initial stack was noted
+--11129:1:    main Starting the address space manager
+--11129:2: aspacem           sp_at_startup = 0x7ffe397b8e00 (supplied)
+--11129:2: aspacem                 minAddr = 0x0004000000 (computed)
+--11129:2: aspacem                 maxAddr = 0x1fffffffff (computed)
+--11129:2: aspacem                  cStart = 0x0004000000 (computed)
+--11129:2: aspacem                  vStart = 0x1002000000 (computed)
+--11129:2: aspacem   suggested_clstack_end = 0x1fff000fff (computed)
+--11129:2: aspacem   <<< SHOW_SEGMENTS: Initial layout (5 segments)
+--11129:2: aspacem   0 segment names in 0 slots
+--11129:2: aspacem   freelist is empty
+--11129:2: aspacem     0: RSVN 0000000000-0003ffffff     64m ----- SmFixed
+--11129:2: aspacem     1:      0004000000-1001ffffff  65504m
+--11129:2: aspacem     2: RSVN 1002000000-1002000fff    4096 ----- SmFixed
+--11129:2: aspacem     3:      1002001000-1fffffffff  65503m
+--11129:2: aspacem     4: RSVN 2000000000-ffffffffffffffff  16383e ----- SmFixed
+--11129:2: aspacem   >>>
+--11129:2: aspacem   Reading /proc/self/maps
+--11129:2: aspacem   <<< SHOW_SEGMENTS: With contents of /proc/self/maps (17 segments)
+--11129:2: aspacem   1 segment names in 1 slots
+--11129:2: aspacem   freelist is empty
+--11129:2: aspacem   (0,4,7) /usr/local/lib/valgrind/memcheck-amd64-linux
+--11129:2: aspacem     0: RSVN 0000000000-0003ffffff     64m ----- SmFixed
+--11129:2: aspacem     1:      0004000000-0057ffffff   1344m
+--11129:2: aspacem     2: FILE 0058000000-0058000fff    4096 r---- d=0xfe01 i=4988740 o=0       (0,4)
+--11129:2: aspacem     3: FILE 0058001000-00581e6fff 1990656 r-x-- d=0xfe01 i=4988740 o=4096    (0,4)
+--11129:2: aspacem     4: FILE 00581e7000-005827efff  622592 r---- d=0xfe01 i=4988740 o=1994752 (0,4)
+--11129:2: aspacem     5:      005827f000-005827ffff    4096
+--11129:2: aspacem     6: FILE 0058280000-0058285fff   24576 rw--- d=0xfe01 i=4988740 o=2617344 (0,4)
+--11129:2: aspacem     7: ANON 0058286000-0059c88fff     26m rw---
+--11129:2: aspacem     8:      0059c89000-1001ffffff  64131m
+--11129:2: aspacem     9: RSVN 1002000000-1002000fff    4096 ----- SmFixed
+--11129:2: aspacem    10:      1002001000-1fffffffff  65503m
+--11129:2: aspacem    11: RSVN 2000000000-7ffe39799fff 130936g ----- SmFixed
+--11129:2: aspacem    12: ANON 7ffe3979a000-7ffe397bafff  135168 rw---
+--11129:2: aspacem    13: RSVN 7ffe397bb000-7ffe397f1fff  225280 ----- SmFixed
+--11129:2: aspacem    14: ANON 7ffe397f2000-7ffe397f4fff   12288 r----
+--11129:2: aspacem    15: ANON 7ffe397f5000-7ffe397f6fff    8192 r-x--
+--11129:2: aspacem    16: RSVN 7ffe397f7000-ffffffffffffffff  16383e ----- SmFixed
+--11129:2: aspacem   >>>
+--11129:1:    main Address space manager is running
+--11129:1:    main Starting the dynamic memory manager
+--11129:1:mallocfr newSuperblock at 0x1002001000 (pszB 4194272)  owner VALGRIND/core
+--11129:1:mallocfr deferred_reclaimSuperblock at 0x1002001000 (pszB 4194272)  (prev 0x0) owner VALGRIND/core
+--11129:1:    main Dynamic memory manager is running
+--11129:1:    main Initialise m_debuginfo
+--11129:1:    main VG_(libdir) = /usr/local/lib/valgrind
+--11129:1:    main Getting launcher's name ...
+--11129:1:    main ... /usr/local/bin/valgrind
+--11129:1:    main Get hardware capabilities ...
+--11129:1:   cache warning: Unknown Intel cache config value (0x63), ignoring
+--11129:1:   cache Autodetected cache info is sensible
+--11129:1:   cache Cache info:
+--11129:1:   cache   #levels = 3
+--11129:1:   cache   #caches = 4
+--11129:1:   cache      cache #0:
+--11129:1:   cache         kind = data
+--11129:1:   cache         level = 1
+--11129:1:   cache         size = 32768 bytes
+--11129:1:   cache         linesize = 64 bytes
+--11129:1:   cache         assoc = 8
+--11129:1:   cache      cache #1:
+--11129:1:   cache         kind = insn
+--11129:1:   cache         level = 1
+--11129:1:   cache         size = 32768 bytes
+--11129:1:   cache         linesize = 64 bytes
+--11129:1:   cache         assoc = 8
+--11129:1:   cache      cache #2:
+--11129:1:   cache         kind = unified
+--11129:1:   cache         level = 2
+--11129:1:   cache         size = 262144 bytes
+--11129:1:   cache         linesize = 64 bytes
+--11129:1:   cache         assoc = 4
+--11129:1:   cache      cache #3:
+--11129:1:   cache         kind = unified
+--11129:1:   cache         level = 3
+--11129:1:   cache         size = 6291456 bytes
+--11129:1:   cache         linesize = 64 bytes
+--11129:1:   cache         assoc = 12
+--11129:1:    main ... arch = AMD64, hwcaps = amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--11129:1:    main Getting the working directory at startup
+--11129:1:    main ... /home/alexander/callgrind-test
+--11129:1:    main Split up command line
+--11129:1:    main (early_) Process Valgrind's command line options
+--11129:1:    main Create initial image
+--11129:1: initimg Loading client
+--11129:1: initimg Setup client env
+--11129:2: initimg   preload_string:
+--11129:2: initimg     "/usr/local/lib/valgrind/vgpreload_core-amd64-linux.so:/usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so"
+--11129:1: initimg Setup client stack: size will be 8388608
+--11129:2: initimg   stomping auxv entry 26
+--11129:2: initimg   Client info: initial_IP=0x4001210 initial_TOC=0x0 brk_base=0x10D000
+--11129:2: initimg   Client info: initial_SP=0x1FFF000250 max_stack_size=8388608
+--11129:1: initimg Setup client data (brk) segment
+--11129:1:    main Setup file descriptors
+--11129:1:    main Create fake /proc/<pid>/cmdline
+--11129:1:    main Create fake /proc/<pid>/auxv
+--11129:1:    main Initialise the tool part 1 (pre_clo_init)
+--11129:1:mallocfr deferred_reclaimSuperblock NULL (prev 0x1002001000) owner VALGRIND/core
+--11129:1:mallocfr newSuperblock at 0x1002401000 (pszB 4194272)  owner VALGRIND/core
+--11129:1:    main Print help and quit, if requested
+--11129:1:    main (main_) Process Valgrind's command line options, setup logging
+--11129:1:    main Print the preamble...
+==11129== Memcheck, a memory error detector
+==11129== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11129== Using Valgrind-3.14.0.GIT-97365bada6-20180915 and LibVEX; rerun with -h for copyright info
+==11129== Command: ./callgrind-test
+==11129== 
+--11129-- Valgrind options:
+--11129--    -v
+--11129--    -v
+--11129--    -v
+--11129--    -d
+--11129--    -d
+--11129--    -d
+--11129-- Contents of /proc/version:
+--11129--   Linux version 4.17.0-3-amd64 (debian-kernel@lists.debian.org) (gcc version 7.3.0 (Debian 7.3.0-28)) #1 SMP Debian 4.17.17-1 (2018-08-18)
+--11129-- 
+--11129-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--11129-- Page sizes: currently 4096, max supported 4096
+--11129-- Valgrind library directory: /usr/local/lib/valgrind
+--11129:1:    main ...finished the preamble
+--11129:1:    main Initialise the tool part 2 (post_clo_init)
+--11129:1:    main Initialise TT/TC
+--11129-- TT/TC: VG_(init_tt_tc) (startup of code management)
+--11129-- TT/TC: cache: ignoring --avg-transtab-entry-size=0, using tool provided default 640
+--11129-- TT/TC: cache: 32 sectors of 27,597,024 bytes each = 883,104,768 total TC
+--11129-- TT/TC: table: 32 tables[42588] of C 4,769,856 + H 1,362,816 bytes each = 196,245,504 total TT
+--11129-- TT/TC: table: 42588 tt entries each = 1,362,816 total tt entries
+--11129-- TT/TC: table: 32 htt[65521] of 131,042 bytes each = 4,193,344 total HTT (htt[65521] 65% max occup)
+--11129:1:    main Initialise redirects
+--11129:1:mallocfr newSuperblock at 0x100287C000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:2:transtab   discard_translations(0xffffffffff600000, 1) req by redir_new_DebugInfo(from_addr)
+--11129:2:transtab                       FAST, ec = 256
+--11129:2:transtab   discard_translations(0x580c9484, 1) req by redir_new_DebugInfo(to_addr)
+--11129:2:transtab                       FAST, ec = 100
+==11129== Adding active redirection:
+--11129--     new: 0xffffffffff600000 (???                 ) R-> (0000.0) 0x580c9484 ???
+--11129:2:transtab   discard_translations(0xffffffffff600400, 1) req by redir_new_DebugInfo(from_addr)
+--11129:2:transtab                       FAST, ec = 256
+--11129:2:transtab   discard_translations(0x580c948e, 1) req by redir_new_DebugInfo(to_addr)
+--11129:2:transtab                       FAST, ec = 100
+==11129== Adding active redirection:
+--11129--     new: 0xffffffffff600400 (???                 ) R-> (0000.0) 0x580c948e ???
+--11129:2:transtab   discard_translations(0xffffffffff600800, 1) req by redir_new_DebugInfo(from_addr)
+--11129:2:transtab                       FAST, ec = 256
+--11129:2:transtab   discard_translations(0x580c9498, 1) req by redir_new_DebugInfo(to_addr)
+--11129:2:transtab                       FAST, ec = 100
+==11129== Adding active redirection:
+--11129--     new: 0xffffffffff600800 (???                 ) R-> (0000.0) 0x580c9498 ???
+--11129:1:    main Load initial debug info
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x108000-0x108fff r--
+--11129-- di_notify_mmap-2: /home/alexander/callgrind-test/callgrind-test
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x100287C470
+--11129-- di_notify_mmap-6: no dinfo loaded /home/alexander/callgrind-test/callgrind-test (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x109000-0x109fff r-x
+--11129-- di_notify_mmap-2: /home/alexander/callgrind-test/callgrind-test
+--11129-- di_notify_mmap-3: is_rx_map 1, is_rw_map 0, is_ro_map 0
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x100287C470
+--11129-- di_notify_mmap-6: no dinfo loaded /home/alexander/callgrind-test/callgrind-test (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x10a000-0x10afff r--
+--11129-- di_notify_mmap-2: /home/alexander/callgrind-test/callgrind-test
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x100287C470
+--11129-- di_notify_mmap-6: no dinfo loaded /home/alexander/callgrind-test/callgrind-test (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x10b000-0x10cfff rw-
+--11129-- di_notify_mmap-2: /home/alexander/callgrind-test/callgrind-test
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 1, is_ro_map 0
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x100287C470
+--11129-- di_notify_mmap-5: achieved accept state for /home/alexander/callgrind-test/callgrind-test
+--11129-- Reading syms from /home/alexander/callgrind-test/callgrind-test
+--11129--    svma 0x00000010d0, avma 0x00001090d0
+--11129:1:mallocfr newSuperblock at 0x100297C000 (pszB   65504)  owner VALGRIND/demangle
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x4000000-0x4000fff r--
+--11129-- di_notify_mmap-2: /lib/x86_64-linux-gnu/ld-2.27.so
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C6800
+--11129-- di_notify_mmap-6: no dinfo loaded /lib/x86_64-linux-gnu/ld-2.27.so (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x4001000-0x401efff r-x
+--11129-- di_notify_mmap-2: /lib/x86_64-linux-gnu/ld-2.27.so
+--11129-- di_notify_mmap-3: is_rx_map 1, is_rw_map 0, is_ro_map 0
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C6800
+--11129-- di_notify_mmap-6: no dinfo loaded /lib/x86_64-linux-gnu/ld-2.27.so (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x401f000-0x4026fff r--
+--11129-- di_notify_mmap-2: /lib/x86_64-linux-gnu/ld-2.27.so
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C6800
+--11129-- di_notify_mmap-6: no dinfo loaded /lib/x86_64-linux-gnu/ld-2.27.so (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x4027000-0x4028fff rw-
+--11129-- di_notify_mmap-2: /lib/x86_64-linux-gnu/ld-2.27.so
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 1, is_ro_map 0
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C6800
+--11129-- di_notify_mmap-5: achieved accept state for /lib/x86_64-linux-gnu/ld-2.27.so
+--11129-- Reading syms from /lib/x86_64-linux-gnu/ld-2.27.so
+--11129--    svma 0x0000001090, avma 0x0004001090
+--11129--   Considering /usr/lib/debug/.build-id/dc/5cb16f5e644116cac64a4c3f5da4d081b81a4f.debug ..
+--11129--   .. build-id is valid
+--11129-- summarise_context(loc_start = 0x10): cannot summarise(why=1):   
 0x35b: [0]={ 56(r3) { u  u  u  c-56 u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x363): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x363): cannot summarise(why=1):   
 0x46d: [0]={ 56(r3) { u  u  u  c-56 u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x10): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x10): cannot summarise(why=1):   
 0x36b: [0]={ 56(r3) { u  u  u  c-56 u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x373): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x373): cannot summarise(why=1):   
 0x46f: [0]={ 56(r3) { u  u  u  c-56 u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x10): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x10): cannot summarise(why=1):   
 0x147: [0]={ 56(r3) { u  u  u  c-56 u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x14f): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x14f): cannot summarise(why=1):   
 0x1f3: [0]={ 56(r3) { u  u  u  c-56 u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x4): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x4): cannot summarise(why=1):   
 0x70: [0]={ 32(r3) { u  u  u  c-32 u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x4): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x4): cannot summarise(why=1):   
 0xbe: [0]={ 32(r3) { u  u  u  c-32 u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x4): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x4): cannot summarise(why=1):   
 0xae: [0]={ 32(r3) { u  u  u  c-32 u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x2d): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x2d): cannot summarise(why=1):   
 0x4a: [0]={ 0(r5) { u  u  u  c0 u  u  r9 r8 u  u  u  u  c16 c24 c32 c40 r1 u  u  u  }
---10236:1:mallocfr newSuperblock at 0x100298C000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:mallocfr newSuperblock at 0x1002A8C000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:hashtabl resizing table `di.storage.addStr.1' from 769 to 1543 (total elems 770)
---10236:1:mallocfr deferred_reclaimSuperblock at 0x100298C000 (pszB 1048544)  (prev 0x0) owner VALGRIND/dinfo
---10236:2:transtab   discard_translations(0x401e070, 1) req by redir_new_DebugInfo(from_addr)
---10236:2:transtab                       FAST, ec = 15
---10236:2:transtab   discard_translations(0x580c94bc, 1) req by redir_new_DebugInfo(to_addr)
---10236:2:transtab                       FAST, ec = 100
-==10236== Adding active redirection:
---10236--     new: 0x0401e070 (index               ) R-> (0000.0) 0x580c94bc ???
---10236:2:transtab   discard_translations(0x401e290, 1) req by redir_new_DebugInfo(from_addr)
---10236:2:transtab                       FAST, ec = 15
---10236:2:transtab   discard_translations(0x580c94a2, 1) req by redir_new_DebugInfo(to_addr)
---10236:2:transtab                       FAST, ec = 100
-==10236== Adding active redirection:
---10236--     new: 0x0401e290 (strlen              ) R-> (0000.0) 0x580c94a2 ???
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x58000000-0x58000fff r--
---10236-- di_notify_mmap-2: /usr/local/lib/valgrind/memcheck-amd64-linux
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028BD170
---10236-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/memcheck-amd64-linux (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x58001000-0x581e6fff r-x
---10236-- di_notify_mmap-2: /usr/local/lib/valgrind/memcheck-amd64-linux
---10236-- di_notify_mmap-3: is_rx_map 1, is_rw_map 0, is_ro_map 0
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028BD170
---10236-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/memcheck-amd64-linux (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x581e7000-0x5827efff r--
---10236-- di_notify_mmap-2: /usr/local/lib/valgrind/memcheck-amd64-linux
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028BD170
---10236-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/memcheck-amd64-linux (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x58280000-0x58285fff rw-
---10236-- di_notify_mmap-2: /usr/local/lib/valgrind/memcheck-amd64-linux
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 1, is_ro_map 0
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028BD170
---10236-- di_notify_mmap-5: achieved accept state for /usr/local/lib/valgrind/memcheck-amd64-linux
---10236-- Reading syms from /usr/local/lib/valgrind/memcheck-amd64-linux
---10236--    svma 0x0058001000, avma 0x0058001000
---10236:1:hashtabl resizing table `di.storage.addStr.1' from 769 to 1543 (total elems 770)
---10236:1:hashtabl resizing table `di.storage.addStr.1' from 1543 to 3079 (total elems 1544)
---10236:1:hashtabl resizing table `di.storage.addStr.1' from 3079 to 6151 (total elems 3080)
---10236--    object doesn't have a dynamic symbol table
---10236:1:mallocfr deferred_reclaimSuperblock NULL (prev 0x100298C000) owner VALGRIND/dinfo
---10236:1:mallocfr newSuperblock at 0x1002B8C000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:mallocfr newSuperblock at 0x1002C8C000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:mallocfr newSuperblock at 0x1002D8C000 (pszB 2052064) unsplittable owner VALGRIND/dinfo
---10236:1:mallocfr newSuperblock at 0x1002F81000 (pszB 4100064) unsplittable owner VALGRIND/dinfo
---10236:1:mallocfr newSuperblock at 0x100336A000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:mallocfr reclaimSuperblock at 0x1002D8C000 (pszB 2052064) unsplittable owner VALGRIND/dinfo
---10236:1:mallocfr newSuperblock at 0x1002D8C000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:mallocfr newSuperblock at 0x100346A000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:hashtabl resizing table `di.storage.addStr.1' from 6151 to 12289 (total elems 6152)
---10236:1:mallocfr newSuperblock at 0x100356A000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:mallocfr newSuperblock at 0x100366A000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:mallocfr newSuperblock at 0x100376A000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:mallocfr newSuperblock at 0x100386A000 (pszB 2052064) unsplittable owner VALGRIND/dinfo
---10236:1:mallocfr deferred_reclaimSuperblock at 0x100376A000 (pszB 1048544)  (prev 0x0) owner VALGRIND/dinfo
---10236:1:mallocfr deferred_reclaimSuperblock at 0x100366A000 (pszB 1048544)  (prev 0x100376A000) owner VALGRIND/dinfo
---10236:1:mallocfr reclaimSuperblock at 0x100376A000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:mallocfr deferred_reclaimSuperblock at 0x100356A000 (pszB 1048544)  (prev 0x100366A000) owner VALGRIND/dinfo
---10236:1:mallocfr reclaimSuperblock at 0x100366A000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:mallocfr deferred_reclaimSuperblock at 0x1002D8C000 (pszB 1048544)  (prev 0x100356A000) owner VALGRIND/dinfo
---10236:1:mallocfr reclaimSuperblock at 0x100356A000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:mallocfr shrink superblock 0x1002F81000 to (pszB 2408416) owner VALGRIND/dinfo (munmap-ing 0x10031CD000 1691648)
---10236:1:mallocfr shrink superblock 0x100386A000 to (pszB 1384416) owner VALGRIND/dinfo (munmap-ing 0x10039BC000  667648)
---10236:1:mallocfr deferred_reclaimSuperblock at 0x100346A000 (pszB 1048544)  (prev 0x1002D8C000) owner VALGRIND/dinfo
---10236:1:mallocfr reclaimSuperblock at 0x1002D8C000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:mallocfr deferred_reclaimSuperblock at 0x1002B8C000 (pszB 1048544)  (prev 0x100346A000) owner VALGRIND/dinfo
---10236:1:mallocfr reclaimSuperblock at 0x100346A000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:   redir transfer ownership V -> C of 0x580c9000 .. 0x580c9fff
---10236:1:    main Initialise scheduler (phase 1)
---10236:1:   sched sched_init_phase1
---10236-- Scheduler: using generic scheduler lock implementation.
---10236:1:    main Tell tool about initial permissions
---10236:2:    main   tell tool about 0000108000-0000108fff r--
---10236:2:    main   tell tool about 0000109000-0000109fff r-x
---10236:2:    main   tell tool about 000010a000-000010afff r--
---10236:2:    main   tell tool about 000010b000-000010cfff rw-
---10236:2:    main   tell tool about 0004000000-0004000fff r--
---10236:2:    main   tell tool about 0004001000-000401efff r-x
---10236:2:    main   tell tool about 000401f000-0004026fff r--
---10236:2:    main   tell tool about 0004027000-0004028fff rw-
---10236:2:    main   tell tool about 0004029000-0004029fff rw-
---10236:2:    main   tell tool about 000402a000-000402afff rwx
---10236:2:    main   tell tool about 00580c9000-00580c9fff r-x
---10236:2:    main   tell tool about 1ffefff000-1fff000fff rw-
---10236:2:    main   mark stack inaccessible 1ffefff000-1fff0001cf
---10236:1:    main Initialise scheduler (phase 2)
---10236:1:   sched sched_init_phase2: tid_main=1, cls_end=0x1fff000fff, cls_sz=8388608
---10236:1:    main Finalise initial image
---10236:1:    main Initialise signal management
---10236:1:    main Load suppressions
---10236-- Reading suppressions file: /usr/local/lib/valgrind/default.supp
---10236:2:  stacks   register [start-end] [0x1FFEFFF000-0x1FFF000FFF] as stack 0
---10236:1:    main 
---10236:1:    main 
---10236:1: aspacem <<< SHOW_SEGMENTS: Memory layout at client startup (40 segments)
---10236:1: aspacem 3 segment names in 3 slots
---10236:1: aspacem freelist is empty
---10236:1: aspacem (0,4,9) /usr/local/lib/valgrind/memcheck-amd64-linux
---10236:1: aspacem (1,53,7) /home/alexander/callgrind-test/callgrind-test
---10236:1: aspacem (2,103,7) /lib/x86_64-linux-gnu/ld-2.27.so
---10236:1: aspacem   0: RSVN 0000000000-0000107fff 1081344 ----- SmFixed
---10236:1: aspacem   1: file 0000108000-0000108fff    4096 r---- d=0xfe01 i=8996572 o=0       (1,53)
---10236:1: aspacem   2: file 0000109000-0000109fff    4096 r-x-- d=0xfe01 i=8996572 o=4096    (1,53)
---10236:1: aspacem   3: file 000010a000-000010afff    4096 r---- d=0xfe01 i=8996572 o=8192    (1,53)
---10236:1: aspacem   4: file 000010b000-000010cfff    8192 rw--- d=0xfe01 i=8996572 o=8192    (1,53)
---10236:1: aspacem   5: RSVN 000010d000-0003ffffff     62m ----- SmFixed
---10236:1: aspacem   6: file 0004000000-0004000fff    4096 r---- d=0xfe01 i=14418112 o=0       (2,103)
---10236:1: aspacem   7: file 0004001000-000401efff  122880 r-x-- d=0xfe01 i=14418112 o=4096    (2,103)
---10236:1: aspacem   8: file 000401f000-0004026fff   32768 r---- d=0xfe01 i=14418112 o=126976  (2,103)
---10236:1: aspacem   9: file 0004027000-0004028fff    8192 rw--- d=0xfe01 i=14418112 o=155648  (2,103)
---10236:1: aspacem  10: anon 0004029000-0004029fff    4096 rw---
---10236:1: aspacem  11: anon 000402a000-000402afff    4096 rwx--
---10236:1: aspacem  12: RSVN 000402b000-0004829fff 8384512 ----- SmLower
---10236:1: aspacem  13:      000482a000-0057ffffff   1335m
---10236:1: aspacem  14: FILE 0058000000-0058000fff    4096 r---- d=0xfe01 i=4988740 o=0       (0,4)
---10236:1: aspacem  15: FILE 0058001000-00580c8fff  819200 r-x-- d=0xfe01 i=4988740 o=4096    (0,4)
---10236:1: aspacem  16: file 00580c9000-00580c9fff    4096 r-x-- d=0xfe01 i=4988740 o=823296  (0,4)
---10236:1: aspacem  17: FILE 00580ca000-00581e6fff 1167360 r-x-- d=0xfe01 i=4988740 o=827392  (0,4)
---10236:1: aspacem  18: FILE 00581e7000-005827efff  622592 r---- d=0xfe01 i=4988740 o=1994752 (0,4)
---10236:1: aspacem  19:      005827f000-005827ffff    4096
---10236:1: aspacem  20: FILE 0058280000-0058285fff   24576 rw--- d=0xfe01 i=4988740 o=2617344 (0,4)
---10236:1: aspacem  21: ANON 0058286000-0059c88fff     26m rw---
---10236:1: aspacem  22:      0059c89000-1001ffffff  64131m
---10236:1: aspacem  23: RSVN 1002000000-1002000fff    4096 ----- SmFixed
---10236:1: aspacem  24: ANON 1002001000-1002da7fff     13m rwx--
---10236:1: aspacem  25:      1002da8000-1002f80fff 1937408
---10236:1: aspacem  26: ANON 1002f81000-10031ccfff 2408448 rwx--
---10236:1: aspacem  27:      10031cd000-1003369fff 1691648
---10236:1: aspacem  28: ANON 100336a000-1003469fff 1048576 rwx--
---10236:1: aspacem  29:      100346a000-1003869fff 4194304
---10236:1: aspacem  30: ANON 100386a000-10039bbfff 1384448 rwx--
---10236:1: aspacem  31:      10039bc000-1ffe800fff  65454m
---10236:1: aspacem  32: RSVN 1ffe801000-1ffeffefff 8380416 ----- SmUpper
---10236:1: aspacem  33: anon 1ffefff000-1fff000fff    8192 rw---
---10236:1: aspacem  34:      1fff001000-1fffffffff     15m
---10236:1: aspacem  35: RSVN 2000000000-7ffd48f68fff 130933g ----- SmFixed
---10236:1: aspacem  36: ANON 7ffd48f69000-7ffd48f89fff  135168 rw---
---10236:1: aspacem  37: RSVN 7ffd48f8a000-7ffd48fc2fff  233472 ----- SmFixed
---10236:1: aspacem  38: ANON 7ffd48fc3000-7ffd48fc5fff   12288 r----
---10236:1: aspacem  39: RSVN 7ffd48fc6000-ffffffffffffffff  16383e ----- SmFixed
---10236:1: aspacem >>>
---10236:1:    main 
---10236:1:    main 
---10236:1:    main Running thread 1
---10236:1:syswrap- entering VG_(main_thread_wrapper_NORETURN)
---10236:1: aspacem allocated valgrind thread stack at 0x1002da8000 size 1064960
---10236:1:syswrap- run_a_thread_NORETURN(tid=1): pre-thread_wrapper
---10236:1:syswrap- thread_wrapper(tid=1): entry
---10236:1:  gdbsrv entering call_gdbserver init_reason ... pid 10236 tid 1 status VgTs_Runnable sched_jmpbuf_valid 0
---10236:1:  gdbsrv gdbserver_init gdbserver embedded in valgrind: gdbserver protocol box extracted from gdb 6.6
-==10236== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-10236-by-alexander-on-???
-==10236== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-10236-by-alexander-on-???
-==10236== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-10236-by-alexander-on-???
-==10236== 
-==10236== TO CONTROL THIS PROCESS USING vgdb (which you probably
-==10236== don't want to do, unless you know exactly what you're doing,
-==10236== or are doing some strange experiment):
-==10236==   /usr/local/lib/valgrind/../../bin/vgdb --pid=10236 ...command...
-==10236== 
-==10236== TO DEBUG THIS PROCESS USING GDB: start GDB like this
-==10236==   /path/to/gdb ./callgrind-test
-==10236== and then give GDB the following command
-==10236==   target remote | /usr/local/lib/valgrind/../../bin/vgdb --pid=10236
-==10236== --pid is optional if only one valgrind process is running
-==10236== 
---10236:1:  gdbsrv ptrace_scope 0
---10236:1:  gdbsrv Opening read side /tmp/vgdb-pipe-from-vgdb-to-10236-by-alexander-on-???
---10236:1:  gdbsrv result fd 3
---10236:1:  gdbsrv result safe_fd 1030
---10236-- transtab: allocate sector 0
---10236:1:mallocfr deferred_reclaimSuperblock NULL (prev 0x1002B8C000) owner VALGRIND/dinfo
---10236:1:mallocfr reclaimSuperblock at 0x1002B8C000 (pszB 1048544)  owner VALGRIND/dinfo
---10236:1:mallocfr newSuperblock at 0x1002B8C000 (pszB   65504)  owner VALGRIND/ttaux
---10236-- TT/TC: initialise sector 0
---10236-- REDIR: 0x401e290 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c94a2 (vgPlain_amd64_linux_REDIR_FOR_strlen)
---10236:1: signals extending a stack base 0x1ffefff000 down by 4096 new base 0x1ffeffe000 to cover 0x1ffeffe000
---10236:2:  stacks   change stack 0 from [0x1FFEFFF000-0x1FFF000FFF] to [0x1FFEFFE000-0x1FFF000FFF]
---10236-- REDIR: 0x401e070 (ld-linux-x86-64.so.2:index) redirected to 0x580c94bc (vgPlain_amd64_linux_REDIR_FOR_index)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x482a000-0x482efff r--
---10236-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x100289FF50
---10236-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x482b000-0x482bfff r-x
---10236-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so
---10236-- di_notify_mmap-3: is_rx_map 1, is_rw_map 0, is_ro_map 0
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x100289FF50
---10236-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x482c000-0x482efff r--
---10236-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x100289FF50
---10236-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x482d000-0x482efff rw-
---10236-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 1, is_ro_map 0
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x100289FF50
---10236-- di_notify_mmap-5: achieved accept state for /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so
---10236-- Reading syms from /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so
---10236--    svma 0x0000001050, avma 0x000482b050
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x482f000-0x4830fff rw-
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x4831000-0x4843fff r--
---10236-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C7470
---10236-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x4835000-0x483efff r-x
---10236-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so
---10236-- di_notify_mmap-3: is_rx_map 1, is_rw_map 0, is_ro_map 0
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C7470
---10236-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x483f000-0x4843fff r--
---10236-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C7470
---10236-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x4842000-0x4843fff rw-
---10236-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 1, is_ro_map 0
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C7470
---10236-- di_notify_mmap-5: achieved accept state for /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so
---10236-- Reading syms from /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so
---10236--    svma 0x00000040b0, avma 0x00048350b0
---10236:2:transtab   discard_translations(0x401aab0, 1) req by redir_new_DebugInfo(from_addr)
---10236:2:transtab                       FAST, ec = 13
---10236:2:transtab   discard_translations(0x4839bc0, 1) req by redir_new_DebugInfo(to_addr)
---10236:2:transtab                       FAST, ec = 28
-==10236== Adding active redirection:
---10236--     new: 0x0401aab0 (strcmp              ) R-> (2016.0) 0x04839bc0 strcmp
-==10236== WARNING: new redirection conflicts with existing -- ignoring it
---10236--     old: 0x0401e290 (strlen              ) R-> (0000.0) 0x580c94a2 vgPlain_amd64_linux_REDIR_FOR_strlen
---10236--     new: 0x0401e290 (strlen              ) R-> (2007.0) 0x04838b00 strlen
---10236:2:transtab   discard_translations(0x401e650, 1) req by redir_new_DebugInfo(from_addr)
---10236:2:transtab                       FAST, ec = 15
---10236:2:transtab   discard_translations(0x483c310, 1) req by redir_new_DebugInfo(to_addr)
---10236:2:transtab                       FAST, ec = 30
-==10236== Adding active redirection:
---10236--     new: 0x0401e650 (stpcpy              ) R-> (2020.0) 0x0483c310 stpcpy
---10236:2:transtab   discard_translations(0x401e7d0, 1) req by redir_new_DebugInfo(from_addr)
---10236:2:transtab                       FAST, ec = 15
---10236:2:transtab   discard_translations(0x483d5e0, 1) req by redir_new_DebugInfo(to_addr)
---10236:2:transtab                       FAST, ec = 30
-==10236== Adding active redirection:
---10236--     new: 0x0401e7d0 (mempcpy             ) R-> (2029.0) 0x0483d5e0 mempcpy
---10236-- REDIR: 0x401aab0 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4839bc0 (strcmp)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x4844000-0x4892fff r--
---10236-- di_notify_mmap-2: /etc/ld.so.cache
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
---10236-- REDIR: 0x401e7d0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x483d5e0 (mempcpy)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x4893000-0x69d4fff r--
---10236-- di_notify_mmap-2: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x1002898800
---10236-- di_notify_mmap-6: no dinfo loaded /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x4981000-0x4987fff r-x
---10236-- di_notify_mmap-2: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so
---10236-- di_notify_mmap-3: is_rx_map 1, is_rw_map 0, is_ro_map 0
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x1002898800
---10236-- di_notify_mmap-6: no dinfo loaded /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x498b000-0x6833fff r-x
---10236-- di_notify_mmap-2: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so
---10236-- di_notify_mmap-3: is_rx_map 1, is_rw_map 0, is_ro_map 0
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x1002898800
---10236-- di_notify_mmap-6: no dinfo loaded /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x6834000-0x69a0fff r--
---10236-- di_notify_mmap-2: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x1002898800
---10236-- di_notify_mmap-6: no dinfo loaded /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so (no rx or no rw mapping)
---10236-- di_notify_mmap-0:
---10236-- di_notify_mmap-1: 0x69a2000-0x69befff rw-
---10236-- di_notify_mmap-2: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so
---10236-- di_notify_mmap-3: is_rx_map 0, is_rw_map 1, is_ro_map 0
---10236-- di_notify_mmap-4: noting details in DebugInfo* at 0x1002898800
---10236-- di_notify_mmap-5: achieved accept state for /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so
---10236-- Reading syms from /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so
---10236--    svma 0x00000f8000, avma 0x000498b000
---10236--    object doesn't have a symbol table
---10236:1:hashtabl resizing table `di.storage.addStr.1' from 769 to 1543 (total elems 770)
---10236:1:hashtabl resizing table `di.storage.addStr.1' from 1543 to 3079 (total elems 1544)
---10236:1:hashtabl resizing table `di.storage.addStr.1' from 3079 to 6151 (total elems 3080)
---10236:1:hashtabl resizing table `di.storage.addStr.1' from 6151 to 12289 (total elems 6152)
---10236:1:hashtabl resizing table `di.storage.addStr.1' from 12289 to 24593 (total elems 12290)
---10236:1:mallocfr newSuperblock at 0x100346A000 (pszB 1314784) unsplittable owner VALGRIND/dinfo
---10236-- summarise_context(loc_start = 0x5): cannot summarise(why=1):   
+--11129:1:mallocfr newSuperblock at 0x100298C000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:1:mallocfr newSuperblock at 0x1002A8C000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:1:hashtabl resizing table `di.storage.addStr.1' from 769 to 1543 (total elems 770)
+--11129:1:mallocfr deferred_reclaimSuperblock at 0x100298C000 (pszB 1048544)  (prev 0x0) owner VALGRIND/dinfo
+--11129:2:transtab   discard_translations(0x401e070, 1) req by redir_new_DebugInfo(from_addr)
+--11129:2:transtab                       FAST, ec = 15
+--11129:2:transtab   discard_translations(0x580c94bc, 1) req by redir_new_DebugInfo(to_addr)
+--11129:2:transtab                       FAST, ec = 100
+==11129== Adding active redirection:
+--11129--     new: 0x0401e070 (index               ) R-> (0000.0) 0x580c94bc ???
+--11129:2:transtab   discard_translations(0x401e290, 1) req by redir_new_DebugInfo(from_addr)
+--11129:2:transtab                       FAST, ec = 15
+--11129:2:transtab   discard_translations(0x580c94a2, 1) req by redir_new_DebugInfo(to_addr)
+--11129:2:transtab                       FAST, ec = 100
+==11129== Adding active redirection:
+--11129--     new: 0x0401e290 (strlen              ) R-> (0000.0) 0x580c94a2 ???
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x58000000-0x58000fff r--
+--11129-- di_notify_mmap-2: /usr/local/lib/valgrind/memcheck-amd64-linux
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028BD170
+--11129-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/memcheck-amd64-linux (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x58001000-0x581e6fff r-x
+--11129-- di_notify_mmap-2: /usr/local/lib/valgrind/memcheck-amd64-linux
+--11129-- di_notify_mmap-3: is_rx_map 1, is_rw_map 0, is_ro_map 0
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028BD170
+--11129-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/memcheck-amd64-linux (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x581e7000-0x5827efff r--
+--11129-- di_notify_mmap-2: /usr/local/lib/valgrind/memcheck-amd64-linux
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028BD170
+--11129-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/memcheck-amd64-linux (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x58280000-0x58285fff rw-
+--11129-- di_notify_mmap-2: /usr/local/lib/valgrind/memcheck-amd64-linux
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 1, is_ro_map 0
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028BD170
+--11129-- di_notify_mmap-5: achieved accept state for /usr/local/lib/valgrind/memcheck-amd64-linux
+--11129-- Reading syms from /usr/local/lib/valgrind/memcheck-amd64-linux
+--11129--    svma 0x0058001000, avma 0x0058001000
+--11129:1:hashtabl resizing table `di.storage.addStr.1' from 769 to 1543 (total elems 770)
+--11129:1:hashtabl resizing table `di.storage.addStr.1' from 1543 to 3079 (total elems 1544)
+--11129:1:hashtabl resizing table `di.storage.addStr.1' from 3079 to 6151 (total elems 3080)
+--11129--    object doesn't have a dynamic symbol table
+--11129:1:mallocfr deferred_reclaimSuperblock NULL (prev 0x100298C000) owner VALGRIND/dinfo
+--11129:1:mallocfr newSuperblock at 0x1002B8C000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:1:mallocfr newSuperblock at 0x1002C8C000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:1:mallocfr newSuperblock at 0x1002D8C000 (pszB 2052064) unsplittable owner VALGRIND/dinfo
+--11129:1:mallocfr newSuperblock at 0x1002F81000 (pszB 4100064) unsplittable owner VALGRIND/dinfo
+--11129:1:mallocfr newSuperblock at 0x100336A000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:1:mallocfr reclaimSuperblock at 0x1002D8C000 (pszB 2052064) unsplittable owner VALGRIND/dinfo
+--11129:1:mallocfr newSuperblock at 0x1002D8C000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:1:mallocfr newSuperblock at 0x100346A000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:1:hashtabl resizing table `di.storage.addStr.1' from 6151 to 12289 (total elems 6152)
+--11129:1:mallocfr newSuperblock at 0x100356A000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:1:mallocfr newSuperblock at 0x100366A000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:1:mallocfr newSuperblock at 0x100376A000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:1:mallocfr newSuperblock at 0x100386A000 (pszB 2052064) unsplittable owner VALGRIND/dinfo
+--11129:1:mallocfr deferred_reclaimSuperblock at 0x100376A000 (pszB 1048544)  (prev 0x0) owner VALGRIND/dinfo
+--11129:1:mallocfr deferred_reclaimSuperblock at 0x100366A000 (pszB 1048544)  (prev 0x100376A000) owner VALGRIND/dinfo
+--11129:1:mallocfr reclaimSuperblock at 0x100376A000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:1:mallocfr deferred_reclaimSuperblock at 0x100356A000 (pszB 1048544)  (prev 0x100366A000) owner VALGRIND/dinfo
+--11129:1:mallocfr reclaimSuperblock at 0x100366A000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:1:mallocfr deferred_reclaimSuperblock at 0x1002D8C000 (pszB 1048544)  (prev 0x100356A000) owner VALGRIND/dinfo
+--11129:1:mallocfr reclaimSuperblock at 0x100356A000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:1:mallocfr shrink superblock 0x1002F81000 to (pszB 2408416) owner VALGRIND/dinfo (munmap-ing 0x10031CD000 1691648)
+--11129:1:mallocfr shrink superblock 0x100386A000 to (pszB 1384416) owner VALGRIND/dinfo (munmap-ing 0x10039BC000  667648)
+--11129:1:mallocfr deferred_reclaimSuperblock at 0x100346A000 (pszB 1048544)  (prev 0x1002D8C000) owner VALGRIND/dinfo
+--11129:1:mallocfr reclaimSuperblock at 0x1002D8C000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:1:   redir transfer ownership V -> C of 0x580c9000 .. 0x580c9fff
+--11129:1:    main Initialise scheduler (phase 1)
+--11129:1:   sched sched_init_phase1
+--11129-- Scheduler: using generic scheduler lock implementation.
+--11129:1:    main Tell tool about initial permissions
+--11129:2:    main   tell tool about 0000108000-0000108fff r--
+--11129:2:    main   tell tool about 0000109000-0000109fff r-x
+--11129:2:    main   tell tool about 000010a000-000010afff r--
+--11129:2:    main   tell tool about 000010b000-000010cfff rw-
+--11129:2:    main   tell tool about 0004000000-0004000fff r--
+--11129:2:    main   tell tool about 0004001000-000401efff r-x
+--11129:2:    main   tell tool about 000401f000-0004026fff r--
+--11129:2:    main   tell tool about 0004027000-0004028fff rw-
+--11129:2:    main   tell tool about 0004029000-0004029fff rw-
+--11129:2:    main   tell tool about 000402a000-000402afff rwx
+--11129:2:    main   tell tool about 00580c9000-00580c9fff r-x
+--11129:2:    main   tell tool about 1ffefff000-1fff000fff rw-
+--11129:2:    main   mark stack inaccessible 1ffefff000-1fff0001cf
+--11129:1:    main Initialise scheduler (phase 2)
+--11129:1:   sched sched_init_phase2: tid_main=1, cls_end=0x1fff000fff, cls_sz=8388608
+--11129:1:    main Finalise initial image
+--11129:1:    main Initialise signal management
+--11129:1:    main Load suppressions
+--11129-- Reading suppressions file: /usr/local/lib/valgrind/default.supp
+--11129:2:  stacks   register [start-end] [0x1FFEFFF000-0x1FFF000FFF] as stack 0
+--11129:1:    main 
+--11129:1:    main 
+--11129:1: aspacem <<< SHOW_SEGMENTS: Memory layout at client startup (40 segments)
+--11129:1: aspacem 3 segment names in 3 slots
+--11129:1: aspacem freelist is empty
+--11129:1: aspacem (0,4,9) /usr/local/lib/valgrind/memcheck-amd64-linux
+--11129:1: aspacem (1,53,7) /home/alexander/callgrind-test/callgrind-test
+--11129:1: aspacem (2,103,7) /lib/x86_64-linux-gnu/ld-2.27.so
+--11129:1: aspacem   0: RSVN 0000000000-0000107fff 1081344 ----- SmFixed
+--11129:1: aspacem   1: file 0000108000-0000108fff    4096 r---- d=0xfe01 i=8916474 o=0       (1,53)
+--11129:1: aspacem   2: file 0000109000-0000109fff    4096 r-x-- d=0xfe01 i=8916474 o=4096    (1,53)
+--11129:1: aspacem   3: file 000010a000-000010afff    4096 r---- d=0xfe01 i=8916474 o=8192    (1,53)
+--11129:1: aspacem   4: file 000010b000-000010cfff    8192 rw--- d=0xfe01 i=8916474 o=8192    (1,53)
+--11129:1: aspacem   5: RSVN 000010d000-0003ffffff     62m ----- SmFixed
+--11129:1: aspacem   6: file 0004000000-0004000fff    4096 r---- d=0xfe01 i=14418112 o=0       (2,103)
+--11129:1: aspacem   7: file 0004001000-000401efff  122880 r-x-- d=0xfe01 i=14418112 o=4096    (2,103)
+--11129:1: aspacem   8: file 000401f000-0004026fff   32768 r---- d=0xfe01 i=14418112 o=126976  (2,103)
+--11129:1: aspacem   9: file 0004027000-0004028fff    8192 rw--- d=0xfe01 i=14418112 o=155648  (2,103)
+--11129:1: aspacem  10: anon 0004029000-0004029fff    4096 rw---
+--11129:1: aspacem  11: anon 000402a000-000402afff    4096 rwx--
+--11129:1: aspacem  12: RSVN 000402b000-0004829fff 8384512 ----- SmLower
+--11129:1: aspacem  13:      000482a000-0057ffffff   1335m
+--11129:1: aspacem  14: FILE 0058000000-0058000fff    4096 r---- d=0xfe01 i=4988740 o=0       (0,4)
+--11129:1: aspacem  15: FILE 0058001000-00580c8fff  819200 r-x-- d=0xfe01 i=4988740 o=4096    (0,4)
+--11129:1: aspacem  16: file 00580c9000-00580c9fff    4096 r-x-- d=0xfe01 i=4988740 o=823296  (0,4)
+--11129:1: aspacem  17: FILE 00580ca000-00581e6fff 1167360 r-x-- d=0xfe01 i=4988740 o=827392  (0,4)
+--11129:1: aspacem  18: FILE 00581e7000-005827efff  622592 r---- d=0xfe01 i=4988740 o=1994752 (0,4)
+--11129:1: aspacem  19:      005827f000-005827ffff    4096
+--11129:1: aspacem  20: FILE 0058280000-0058285fff   24576 rw--- d=0xfe01 i=4988740 o=2617344 (0,4)
+--11129:1: aspacem  21: ANON 0058286000-0059c88fff     26m rw---
+--11129:1: aspacem  22:      0059c89000-1001ffffff  64131m
+--11129:1: aspacem  23: RSVN 1002000000-1002000fff    4096 ----- SmFixed
+--11129:1: aspacem  24: ANON 1002001000-1002da7fff     13m rwx--
+--11129:1: aspacem  25:      1002da8000-1002f80fff 1937408
+--11129:1: aspacem  26: ANON 1002f81000-10031ccfff 2408448 rwx--
+--11129:1: aspacem  27:      10031cd000-1003369fff 1691648
+--11129:1: aspacem  28: ANON 100336a000-1003569fff 2097152 rwx--
+--11129:1: aspacem  29:      100356a000-1003869fff 3145728
+--11129:1: aspacem  30: ANON 100386a000-10039bbfff 1384448 rwx--
+--11129:1: aspacem  31:      10039bc000-1ffe800fff  65454m
+--11129:1: aspacem  32: RSVN 1ffe801000-1ffeffefff 8380416 ----- SmUpper
+--11129:1: aspacem  33: anon 1ffefff000-1fff000fff    8192 rw---
+--11129:1: aspacem  34:      1fff001000-1fffffffff     15m
+--11129:1: aspacem  35: RSVN 2000000000-7ffe39799fff 130936g ----- SmFixed
+--11129:1: aspacem  36: ANON 7ffe3979a000-7ffe397bafff  135168 rw---
+--11129:1: aspacem  37: RSVN 7ffe397bb000-7ffe397f1fff  225280 ----- SmFixed
+--11129:1: aspacem  38: ANON 7ffe397f2000-7ffe397f4fff   12288 r----
+--11129:1: aspacem  39: RSVN 7ffe397f5000-ffffffffffffffff  16383e ----- SmFixed
+--11129:1: aspacem >>>
+--11129:1:    main 
+--11129:1:    main 
+--11129:1:    main Running thread 1
+--11129:1:syswrap- entering VG_(main_thread_wrapper_NORETURN)
+--11129:1: aspacem allocated valgrind thread stack at 0x1002da8000 size 1064960
+--11129:1:syswrap- run_a_thread_NORETURN(tid=1): pre-thread_wrapper
+--11129:1:syswrap- thread_wrapper(tid=1): entry
+--11129:1:  gdbsrv entering call_gdbserver init_reason ... pid 11129 tid 1 status VgTs_Runnable sched_jmpbuf_valid 0
+--11129:1:  gdbsrv gdbserver_init gdbserver embedded in valgrind: gdbserver protocol box extracted from gdb 6.6
+==11129== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-11129-by-alexander-on-???
+==11129== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-11129-by-alexander-on-???
+==11129== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-11129-by-alexander-on-???
+==11129== 
+==11129== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==11129== don't want to do, unless you know exactly what you're doing,
+==11129== or are doing some strange experiment):
+==11129==   /usr/local/lib/valgrind/../../bin/vgdb --pid=11129 ...command...
+==11129== 
+==11129== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==11129==   /path/to/gdb ./callgrind-test
+==11129== and then give GDB the following command
+==11129==   target remote | /usr/local/lib/valgrind/../../bin/vgdb --pid=11129
+==11129== --pid is optional if only one valgrind process is running
+==11129== 
+--11129:1:  gdbsrv ptrace_scope 0
+--11129:1:  gdbsrv Opening read side /tmp/vgdb-pipe-from-vgdb-to-11129-by-alexander-on-???
+--11129:1:  gdbsrv result fd 3
+--11129:1:  gdbsrv result safe_fd 1030
+--11129-- transtab: allocate sector 0
+--11129:1:mallocfr deferred_reclaimSuperblock NULL (prev 0x100346A000) owner VALGRIND/dinfo
+--11129:1:mallocfr reclaimSuperblock at 0x100346A000 (pszB 1048544)  owner VALGRIND/dinfo
+--11129:1:mallocfr newSuperblock at 0x1002ECD000 (pszB   65504)  owner VALGRIND/ttaux
+--11129-- TT/TC: initialise sector 0
+--11129-- REDIR: 0x401e290 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c94a2 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--11129:1: signals extending a stack base 0x1ffefff000 down by 4096 new base 0x1ffeffe000 to cover 0x1ffeffe000
+--11129:2:  stacks   change stack 0 from [0x1FFEFFF000-0x1FFF000FFF] to [0x1FFEFFE000-0x1FFF000FFF]
+--11129-- REDIR: 0x401e070 (ld-linux-x86-64.so.2:index) redirected to 0x580c94bc (vgPlain_amd64_linux_REDIR_FOR_index)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x482a000-0x482efff r--
+--11129-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x100289FF50
+--11129-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x482b000-0x482bfff r-x
+--11129-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so
+--11129-- di_notify_mmap-3: is_rx_map 1, is_rw_map 0, is_ro_map 0
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x100289FF50
+--11129-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x482c000-0x482efff r--
+--11129-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x100289FF50
+--11129-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x482d000-0x482efff rw-
+--11129-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 1, is_ro_map 0
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x100289FF50
+--11129-- di_notify_mmap-5: achieved accept state for /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so
+--11129-- Reading syms from /usr/local/lib/valgrind/vgpreload_core-amd64-linux.so
+--11129--    svma 0x0000001050, avma 0x000482b050
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x482f000-0x4830fff rw-
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x4831000-0x4843fff r--
+--11129-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C7810
+--11129-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x4835000-0x483efff r-x
+--11129-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--11129-- di_notify_mmap-3: is_rx_map 1, is_rw_map 0, is_ro_map 0
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C7810
+--11129-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x483f000-0x4843fff r--
+--11129-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C7810
+--11129-- di_notify_mmap-6: no dinfo loaded /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x4842000-0x4843fff rw-
+--11129-- di_notify_mmap-2: /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 1, is_ro_map 0
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x10028C7810
+--11129-- di_notify_mmap-5: achieved accept state for /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--11129-- Reading syms from /usr/local/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--11129--    svma 0x00000040b0, avma 0x00048350b0
+--11129:2:transtab   discard_translations(0x401aab0, 1) req by redir_new_DebugInfo(from_addr)
+--11129:2:transtab                       FAST, ec = 13
+--11129:2:transtab   discard_translations(0x4839bc0, 1) req by redir_new_DebugInfo(to_addr)
+--11129:2:transtab                       FAST, ec = 28
+==11129== Adding active redirection:
+--11129--     new: 0x0401aab0 (strcmp              ) R-> (2016.0) 0x04839bc0 strcmp
+==11129== WARNING: new redirection conflicts with existing -- ignoring it
+--11129--     old: 0x0401e290 (strlen              ) R-> (0000.0) 0x580c94a2 vgPlain_amd64_linux_REDIR_FOR_strlen
+--11129--     new: 0x0401e290 (strlen              ) R-> (2007.0) 0x04838b00 strlen
+--11129:2:transtab   discard_translations(0x401e650, 1) req by redir_new_DebugInfo(from_addr)
+--11129:2:transtab                       FAST, ec = 15
+--11129:2:transtab   discard_translations(0x483c310, 1) req by redir_new_DebugInfo(to_addr)
+--11129:2:transtab                       FAST, ec = 30
+==11129== Adding active redirection:
+--11129--     new: 0x0401e650 (stpcpy              ) R-> (2020.0) 0x0483c310 stpcpy
+--11129:2:transtab   discard_translations(0x401e7d0, 1) req by redir_new_DebugInfo(from_addr)
+--11129:2:transtab                       FAST, ec = 15
+--11129:2:transtab   discard_translations(0x483d5e0, 1) req by redir_new_DebugInfo(to_addr)
+--11129:2:transtab                       FAST, ec = 30
+==11129== Adding active redirection:
+--11129--     new: 0x0401e7d0 (mempcpy             ) R-> (2029.0) 0x0483d5e0 mempcpy
+--11129-- REDIR: 0x401aab0 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4839bc0 (strcmp)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x4844000-0x4892fff r--
+--11129-- di_notify_mmap-2: /etc/ld.so.cache
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
+--11129-- REDIR: 0x401e7d0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x483d5e0 (mempcpy)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x4893000-0x69d4fff r--
+--11129-- di_notify_mmap-2: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x1002A92920
+--11129-- di_notify_mmap-6: no dinfo loaded /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x4981000-0x4987fff r-x
+--11129-- di_notify_mmap-2: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so
+--11129-- di_notify_mmap-3: is_rx_map 1, is_rw_map 0, is_ro_map 0
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x1002A92920
+--11129-- di_notify_mmap-6: no dinfo loaded /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x498b000-0x6833fff r-x
+--11129-- di_notify_mmap-2: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so
+--11129-- di_notify_mmap-3: is_rx_map 1, is_rw_map 0, is_ro_map 0
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x1002A92920
+--11129-- di_notify_mmap-6: no dinfo loaded /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x6834000-0x69a0fff r--
+--11129-- di_notify_mmap-2: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 0, is_ro_map 1
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x1002A92920
+--11129-- di_notify_mmap-6: no dinfo loaded /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so (no rx or no rw mapping)
+--11129-- di_notify_mmap-0:
+--11129-- di_notify_mmap-1: 0x69a2000-0x69befff rw-
+--11129-- di_notify_mmap-2: /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so
+--11129-- di_notify_mmap-3: is_rx_map 0, is_rw_map 1, is_ro_map 0
+--11129-- di_notify_mmap-4: noting details in DebugInfo* at 0x1002A92920
+--11129-- di_notify_mmap-5: achieved accept state for /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so
+--11129-- Reading syms from /usr/lib/x86_64-linux-gnu/libopenblasp-r0.3.3.so
+--11129--    svma 0x00000f8000, avma 0x000498b000
+--11129--    object doesn't have a symbol table
+--11129:1:hashtabl resizing table `di.storage.addStr.1' from 769 to 1543 (total elems 770)
+--11129:1:hashtabl resizing table `di.storage.addStr.1' from 1543 to 3079 (total elems 1544)
+--11129:1:hashtabl resizing table `di.storage.addStr.1' from 3079 to 6151 (total elems 3080)
+--11129:1:hashtabl resizing table `di.storage.addStr.1' from 6151 to 12289 (total elems 6152)
+--11129:1:hashtabl resizing table `di.storage.addStr.1' from 12289 to 24593 (total elems 12290)
+--11129:1:mallocfr newSuperblock at 0x100346A000 (pszB 1314784) unsplittable owner VALGRIND/dinfo
+--11129-- summarise_context(loc_start = 0x5): cannot summarise(why=1):   
 0x14: [0]={ 0(r10) { u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x14): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x14): cannot summarise(why=1):   
 0x21: [0]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xbf9): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xbf9): cannot summarise(why=1):   
 0xbfb: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xbfb): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xbfb): cannot summarise(why=1):   
 0xbfd: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xbfd): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xbfd): cannot summarise(why=1):   
 0xbff: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xbff): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xbff): cannot summarise(why=1):   
 0xc01: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  u  ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc01): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc01): cannot summarise(why=1):   
 0xc02: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc02): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc02): cannot summarise(why=1):   
 0xc06: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x5): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x5): cannot summarise(why=1):   
 0x14: [0]={ 0(r10) { u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x14): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x14): cannot summarise(why=1):   
 0x21: [0]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc0f): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc0f): cannot summarise(why=1):   
 0xc11: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc11): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc11): cannot summarise(why=1):   
 0xc13: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc13): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc13): cannot summarise(why=1):   
 0xc15: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc15): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc15): cannot summarise(why=1):   
 0xc17: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  u  ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc17): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc17): cannot summarise(why=1):   
 0xc18: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc18): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc18): cannot summarise(why=1):   
 0xc1c: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x5): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x5): cannot summarise(why=1):   
 0x14: [0]={ 0(r10) { u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x14): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x14): cannot summarise(why=1):   
 0x21: [0]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xbff): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xbff): cannot summarise(why=1):   
 0xc01: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc01): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc01): cannot summarise(why=1):   
 0xc03: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc03): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc03): cannot summarise(why=1):   
 0xc05: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc05): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc05): cannot summarise(why=1):   
 0xc07: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  u  ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc07): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc07): cannot summarise(why=1):   
 0xc08: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc08): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc08): cannot summarise(why=1):   
 0xc0c: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x5): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x5): cannot summarise(why=1):   
 0x14: [0]={ 0(r10) { u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x14): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x14): cannot summarise(why=1):   
 0x21: [0]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc13): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc13): cannot summarise(why=1):   
 0xc15: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc15): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc15): cannot summarise(why=1):   
 0xc17: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc17): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc17): cannot summarise(why=1):   
 0xc19: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc19): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc19): cannot summarise(why=1):   
 0xc1b: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  u  ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc1b): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc1b): cannot summarise(why=1):   
 0xc1c: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xc1c): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xc1c): cannot summarise(why=1):   
 0xc20: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236:1:mallocfr newSuperblock at 0x10035AB000 (pszB 2625504) unsplittable owner VALGRIND/dinfo
---10236:1:mallocfr reclaimSuperblock at 0x100346A000 (pszB 1314784) unsplittable owner VALGRIND/dinfo
---10236-- summarise_context(loc_start = 0x5): cannot summarise(why=1):   
+--11129:1:mallocfr newSuperblock at 0x10035AB000 (pszB 2625504) unsplittable owner VALGRIND/dinfo
+--11129:1:mallocfr reclaimSuperblock at 0x100346A000 (pszB 1314784) unsplittable owner VALGRIND/dinfo
+--11129-- summarise_context(loc_start = 0x5): cannot summarise(why=1):   
 0xe: [0]={ 0(r10) { u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0xe): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0xe): cannot summarise(why=1):   
 0x1b: [0]={ 0(r10) { u  u  u  u  u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  u  u  u  u  c-8 u  u  u  }
---10236-- summarise_context(loc_start = 0x4c7): cannot summarise(why=1):   
+--11129-- summarise_context(loc_start = 0x4c7): cannot summarise(why=1):   
 0x4d4: [0]={ {*((dwr6)+(0xffffffffffffffd8))} { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  } [1]={ 0(r10) { u  u  u  ve{*((dwr6)+(0xffffffffffffffd0))} u  u  ve{*((dwr6)+(0x0))} u  u  u  u  u  ve{*((dwr6)+(0xffffffffffffffe0))} ve{*((dwr6)+(0xffffffffffffffe8))} ve{*((dwr6)+(0xfffffffffffffff0))} ve{*((dwr6)+(0xfffffffffffffff8))} c-8 u  u  u  }
---10236:1:mallocfr newSuperblock at 0x100589B000 (pszB 5246944) unsplittable owner VALGRIND/dinfo
---10236:1:mallocfr reclaimSuperblock at 0x10035AB000 (pszB 2625504) unsplittable owner VALGRIND/dinfo
+--11129:1:mallocfr newSuperblock at 0x100589B000 (pszB 5246944) unsplittable owner VALGRIND/dinfo
+--11129:1:mallocfr reclaimSuperblock at 0x10035AB000 (pszB 2625504) unsplittable owner VALGRIND/dinfo
 
 valgrind: m_debuginfo/debuginfo.c:738 (check_CFSI_related_invariants): Assertion 'cfsi_fits' failed.
 
 host stacktrace:
-==10236==    at 0x58048064: show_sched_status_wrk (m_libcassert.c:369)
-==10236==    by 0x58048177: report_and_quit (m_libcassert.c:440)
-==10236==    by 0x58048309: vgPlain_assert_fail (m_libcassert.c:506)
-==10236==    by 0x5807BEEF: check_CFSI_related_invariants (debuginfo.c:738)
-==10236==    by 0x5807BEEF: di_notify_ACHIEVE_ACCEPT_STATE (debuginfo.c:959)
-==10236==    by 0x5807BEEF: vgPlain_di_notify_mmap (debuginfo.c:1291)
-==10236==    by 0x580AD32B: vgModuleLocal_generic_PRE_sys_mmap (syswrap-generic.c:2402)
-==10236==    by 0x580B8DCF: vgSysWrap_amd64_linux_sys_mmap_before (syswrap-amd64-linux.c:404)
-==10236==    by 0x580A8A41: vgPlain_client_syscall (syswrap-main.c:1863)
-==10236==    by 0x580A4F7A: handle_syscall (scheduler.c:1176)
-==10236==    by 0x580A6836: vgPlain_scheduler (scheduler.c:1498)
-==10236==    by 0x580F5500: thread_wrapper (syswrap-linux.c:103)
-==10236==    by 0x580F5500: run_a_thread_NORETURN (syswrap-linux.c:156)
+==11129==    at 0x58048064: show_sched_status_wrk (m_libcassert.c:369)
+==11129==    by 0x58048177: report_and_quit (m_libcassert.c:440)
+==11129==    by 0x58048309: vgPlain_assert_fail (m_libcassert.c:506)
+==11129==    by 0x5807BEEF: check_CFSI_related_invariants (debuginfo.c:738)
+==11129==    by 0x5807BEEF: di_notify_ACHIEVE_ACCEPT_STATE (debuginfo.c:959)
+==11129==    by 0x5807BEEF: vgPlain_di_notify_mmap (debuginfo.c:1291)
+==11129==    by 0x580AD32B: vgModuleLocal_generic_PRE_sys_mmap (syswrap-generic.c:2402)
+==11129==    by 0x580B8DCF: vgSysWrap_amd64_linux_sys_mmap_before (syswrap-amd64-linux.c:404)
+==11129==    by 0x580A8A41: vgPlain_client_syscall (syswrap-main.c:1863)
+==11129==    by 0x580A4F7A: handle_syscall (scheduler.c:1176)
+==11129==    by 0x580A6836: vgPlain_scheduler (scheduler.c:1498)
+==11129==    by 0x580F5500: thread_wrapper (syswrap-linux.c:103)
+==11129==    by 0x580F5500: run_a_thread_NORETURN (syswrap-linux.c:156)
 
 sched status:
   running_tid=1
 
-Thread 1: status = VgTs_Runnable syscall 9 (lwpid 10236)
-==10236==    at 0x401A693: mmap (mmap64.c:52)
-==10236==    by 0x40060AD: _dl_map_segments (dl-map-segments.h:94)
-==10236==    by 0x40060AD: _dl_map_object_from_fd (dl-load.c:1181)
-==10236==    by 0x400890E: _dl_map_object (dl-load.c:2461)
-==10236==    by 0x400D061: openaux (dl-deps.c:63)
-==10236==    by 0x401950A: _dl_catch_exception (dl-error-skeleton.c:196)
-==10236==    by 0x400D2F2: _dl_map_object_deps (dl-deps.c:249)
-==10236==    by 0x4003D95: dl_main (rtld.c:1726)
-==10236==    by 0x401862F: _dl_sysdep_start (dl-sysdep.c:253)
-==10236==    by 0x40020D7: _dl_start_final (rtld.c:414)
-==10236==    by 0x40020D7: _dl_start (rtld.c:521)
-==10236==    by 0x4001217: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+Thread 1: status = VgTs_Runnable syscall 9 (lwpid 11129)
+==11129==    at 0x401A693: mmap (mmap64.c:52)
+==11129==    by 0x40060AD: _dl_map_segments (dl-map-segments.h:94)
+==11129==    by 0x40060AD: _dl_map_object_from_fd (dl-load.c:1181)
+==11129==    by 0x400890E: _dl_map_object (dl-load.c:2461)
+==11129==    by 0x400D061: openaux (dl-deps.c:63)
+==11129==    by 0x401950A: _dl_catch_exception (dl-error-skeleton.c:196)
+==11129==    by 0x400D2F2: _dl_map_object_deps (dl-deps.c:249)
+==11129==    by 0x4003D95: dl_main (rtld.c:1726)
+==11129==    by 0x401862F: _dl_sysdep_start (dl-sysdep.c:253)
+==11129==    by 0x40020D7: _dl_start_final (rtld.c:414)
+==11129==    by 0x40020D7: _dl_start (rtld.c:521)
+==11129==    by 0x4001217: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
 client stack range: [0x1FFEFFE000 0x1FFF000FFF] client SP: 0x1FFEFFF4E8
 valgrind stack range: [0x1002DAA000 0x1002EA9FFF] top usage: 7640 of 1048576
 
@@ -664,10 +662,10 @@ If that doesn't help, please report this bug to: www.valgrind.org
 In the bug report, send all the above text, the valgrind
 version, and what OS and version you are using.  Thanks.
 
---10236:1:  gdbsrv VG core calling VG_(gdbserver_exit) tid 1 will exit
---10236:1:  gdbsrv not connected
---10236:1:  gdbsrv remote_finish (reason orderly_finish) 1030 -1
---10236:1:  gdbsrv 10236 (creator 10236) maybe unlinking 
-    /tmp/vgdb-pipe-from-vgdb-to-10236-by-alexander-on-???
-    /tmp/vgdb-pipe-to-vgdb-from-10236-by-alexander-on-???
-    /tmp/vgdb-pipe-shared-mem-vgdb-10236-by-alexander-on-???
+--11129:1:  gdbsrv VG core calling VG_(gdbserver_exit) tid 1 will exit
+--11129:1:  gdbsrv not connected
+--11129:1:  gdbsrv remote_finish (reason orderly_finish) 1030 -1
+--11129:1:  gdbsrv 11129 (creator 11129) maybe unlinking 
+    /tmp/vgdb-pipe-from-vgdb-to-11129-by-alexander-on-???
+    /tmp/vgdb-pipe-to-vgdb-from-11129-by-alexander-on-???
+    /tmp/vgdb-pipe-shared-mem-vgdb-11129-by-alexander-on-???
